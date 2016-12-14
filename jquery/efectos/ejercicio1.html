@@ -8,7 +8,19 @@
 </style>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script>
-	var vissible = true;
+
+
+	$(document).ready(function() { // actua cuando el contenido completo está cargado
+	$("#button").click(function() { // actua cuando se hace click en el elemento button
+		$("p").toggle(); // toggle es una opción de jquery que actua como un if / else 
+	});
+	});
+
+
+
+	//El código de abajo hace lo mismo que el de arriba 
+
+	/*var vissible = true;
 
 	$(document).ready(function() {
 		$("button").click(function() {
@@ -31,6 +43,7 @@
 		vissible = true;
 				document.getElementById("button").innerHTML = "Ocultar";
 	}
+	*/
 </script>
 </head>
 <body>
