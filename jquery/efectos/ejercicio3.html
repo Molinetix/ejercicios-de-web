@@ -8,6 +8,30 @@ button {
 	padding: 12px;
 }
 </style>
+<script>
+	var vissible = true;
+
+	jQuery(document).ready(function($) {
+		$("button").click(function(event) {
+			if(vissible == true) {
+				ocultarParrafo();
+			}else if(vissible == false){
+				aparecerParrafo();
+			}
+		});
+	});
+
+	function ocultarParrafo(){
+		$("p:first").hide(1000);
+		vissible = false;
+
+	}
+
+	function aparecerParrafo(){
+		$("p:first").show(1000);
+		vissible = true;
+	}
+</script>
 </head>
 <body>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
