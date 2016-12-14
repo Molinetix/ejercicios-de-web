@@ -8,11 +8,27 @@
 </style>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script>
-	jQuery(document).ready(function($) {
-		$("button").click(function(event) {
-			$("p").hide(1000);
-		});	
+	var vissible = true;
+
+	$(document).ready(function() {
+		$("button").click(function() {
+			if(vissible == true) {
+				ocultarBoton();
+			}else if(vissible == false){
+				aparecerBoton();
+			}
+		});
 	});
+
+	function ocultarBoton(){
+		$("p").hide(1000);
+		vissible = false;
+	}
+
+	function aparecerBoton(){
+		$("p").show(1000);
+		vissible = true;
+	}
 </script>
 </head>
 <body>
