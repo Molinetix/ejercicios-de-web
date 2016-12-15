@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <meta charset="UTF-8">
 <title>ejercicio 3 - jQuery</title>
 <style>
@@ -8,11 +8,12 @@ button {
 	padding: 12px;
 }
 </style>
+
 <script>
 	var vissible = true;
 
-	jQuery(document).ready(function($) {
-		$("button").click(function(event) {
+	$(document).ready(function() {
+		$("button").click(function() {
 			if(vissible == true) {
 				ocultarParrafo();
 			}else if(vissible == false){
@@ -24,13 +25,13 @@ button {
 	function ocultarParrafo(){
 		$("p:first").hide(1000);
 		vissible = false;
-
 	}
 
 	function aparecerParrafo(){
 		$("p:first").show(1000);
 		vissible = true;
 	}
+
 </script>
 </head>
 <body>
