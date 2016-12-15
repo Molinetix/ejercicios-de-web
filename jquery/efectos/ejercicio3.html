@@ -23,14 +23,14 @@ button {
 	});
 
 	function ocultarParrafo(){
-		$("p:first").hide(1000);
-		$("p:last").hide(1000);
+		//$("p:odd").hide(1000); // impares
+		$("p:even").hide(2000); // pares
 		vissible = false;
 	}
 
 	function aparecerParrafo(){
-		$("p:first").show(1000);
-		$("p:last").show(1000);
+		//$("p:odd").show(1000); // impares
+		$("p:even").show(2000); // pares
 		vissible = true;
 	}
 
