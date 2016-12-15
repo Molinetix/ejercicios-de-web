@@ -11,11 +11,17 @@ button {
 <script src="jquery-1.10.2.js"></script>
 <script>
 	$(document).ready(function() {
-		$("button").click(function() {
-			$("p").fadeOut(10000);
-			alert ("El párrafo se ha escondido AHORA");
+
+		$("button").click(function(event) {
+
+			$("p").fadeOut(10000, alerta);
+			
 		});
 	});
+
+	function alerta(){
+		alert ("El párrafo se ha escondido AHORA");
+	}
 </script>
 </head>
 <body>

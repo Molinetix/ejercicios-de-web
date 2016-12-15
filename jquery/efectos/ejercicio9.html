@@ -17,9 +17,18 @@ a img {
 	margin-left: -290px;
 }
 </style>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script src="jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
+
+	// ready + tab
 	$(document).ready(function() {
+		var imagenes = $("img");
+		$("img").click(function(evento) {
+			$(this).slideUp("slow"); // hace desaparecer las imagenes
+			evento.preventDefault(); // evita que se vaya a los enlaces ya que estos no existen
+		});
+
 	});
 </script>
 </head>
