@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>ejercicios eventos jquery</title>
-<script src="jquery-1.10.2.js"></script>
-<script>
-	$(document).ready(function() {
-		function clicAlerta() {
-			alert("Has hecho clic");
-		}
-	});
-</script>
+  <meta charset="UTF-8">
+  <title>ejercicios eventos jquery</title>
+  <script src="jquery-1.10.2.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+	  <script>
+			  $(document).ready(function() {
+			    $("p").hover(function() {
+			      $("p").css('color', 'red');
+
+			    }, function() {
+			      /* Stuff to do when the mouse leaves the element */
+			      $("p").css('color', 'black');
+			    });
+
+			    $(".miclase").click(function(event) {
+			  	 clicAlerta();
+			  	});
+
+			  });
+
+			  
+			  function clicAlerta() {
+			    alert("Has hecho clic");
+			  };
+
+	  </script>
+
 </head>
+
 <body>
-	<p class="miclase">Primer párrafo</p>
-	<p>Otro párrafo</p>
+  <p class="miclase">Primer párrafo</p>
+  <p>Otro párrafo</p>
 </body>
+
 </html>
