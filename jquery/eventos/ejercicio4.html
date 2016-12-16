@@ -11,6 +11,10 @@
   li{
   	overflow: auto; 
   }
+
+  .badge{
+  	margin-left: 5px;
+  }
   /* Evitamos que un elemento se contraiga */
   </style>
   <!-- Latest compiled and minified CSS & JS -->
@@ -32,31 +36,37 @@
     </div>
     <div class="row">
       <ul class="list-group">
-        <li class="list-group-item">Peras
+        <li class="list-group-item">
+
+        <span class="pull-left">Peras</span>
+
+        <span class="badge pull-left">0</span>
+
           <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
           </button>
         </li>
-        <li class="list-group-item">Manzanas
+        <li class="list-group-item">
+
+        <span class="pull-left">Manzana</span>
+
+        <span class="badge pull-left">0</span>
+
           <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
           </button>
         </li>
-        <li class="list-group-item">Platanos
+        <li class="list-group-item">
+
+        <span class="pull-left">Sandía</span>
+
+        <span class="badge pull-left">0</span>
+
           <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
           </button>
         </li>
-        <li class="list-group-item">Lechugas
-          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="list-group-item">Zanahorias
-          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-          </button>
-        </li>
+    
       </ul>
     </div>
   </div>
@@ -73,10 +83,11 @@
 
     $("ul").on('click', 'li', function() { // gracias al método on los elementos,
       $(this).toggleClass('active'); //  que se añaden despues también se modifican.
-
+      var badge = $(this).children('.badge');
+      var contador = badge.html();
+      badge.html(parseInt(contador)+1);
     });
-
-  });
+	});
 
   /* // este código es más extenso
 
