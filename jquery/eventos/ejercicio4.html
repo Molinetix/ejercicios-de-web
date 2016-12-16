@@ -5,7 +5,13 @@
   <meta charset="UTF-8">
   <title>Lista de la compra</title>
   <style>
-  	.row{margin:10px;}
+  .row {
+    margin: 20px;
+  }
+  li{
+  	overflow: auto; 
+  }
+  /* Evitamos que un elemento se contraiga */
   </style>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -15,39 +21,73 @@
 <body>
   <div class="container">
     <div class="row">
-      <form action="recibir_lista.php" method="GET" class="form-inline" role="form">
+      <form action="#" method="GET" class="form-inline" role="form">
         <div class="form-group">
-          <label class="" for="">Introduce el alimento</label>
+          <label class="" for=""></label>
           <input type="text" class="form-control" id="elemento" placeholder="Introduce la comida">
         </div>
-        <button id="btnadd" type="reset" class="btn btn-info">Añadir Elemento</button>
+        <button id="btnadd" class="btn btn-info">Añadir Elemento</button>
         <button id="btncomprar" class="btn btn-primary">Realizar Compra</button>
       </form>
     </div>
     <div class="row">
       <ul class="list-group">
-        <li class="list-group-item">Peras</li>
-        <li class="list-group-item">Manzanas</li>
-        <li class="list-group-item">Platanos</li>
-        <li class="list-group-item">Lechugas</li>
-        <li class="list-group-item">Zanahorias</li>
+        <li class="list-group-item">Peras
+          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          </button>
+        </li>
+        <li class="list-group-item">Manzanas
+          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          </button>
+        </li>
+        <li class="list-group-item">Platanos
+          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          </button>
+        </li>
+        <li class="list-group-item">Lechugas
+          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          </button>
+        </li>
+        <li class="list-group-item">Zanahorias
+          <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          </button>
+        </li>
       </ul>
     </div>
   </div>
+  <script>
+  $(document).ready(function(e) {
+    $("#btnadd").click(function(event) {
+      var elemento = $("#elemento").val();
+      if (elemento != '') {
+        $("li:last").after('<li class="list-group-item">' + elemento + '<button type="button" class="btn btn-default pull-right" aria-label="Left Align"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button></li>');
+        $("#elemento").val('');
+      }
+      event.preventDefault();
+    });
 
-	<script>
+    $("ul").on('click', 'li', function() { // gracias al método on los elementos,
+      $(this).toggleClass('active'); //  que se añaden despues también se modifican.
 
-	$(document).ready(function($) {
-		$("#btnadd").click(function(event) {
-			var elemento = $("#elemento").val();
-			if(elemento != ''){
-			$("li:last").after('<li class="list-group-item">'+ elemento +'</li>')
-			}
-		});
-	});
+    });
 
-	</script>
+  });
 
+  /* // este código es más extenso
+
+  	if($(this).hasClass('active')){
+  	$(this).removeClass('active');
+  }else{
+  	$(this).addClass('active');
+  }
+
+  */
+  </script>
 </body>
 
 </html>
